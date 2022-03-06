@@ -148,7 +148,7 @@ LOGIN_URL = 'accounts/login'
 
 
 # Configurações Especificas do Channels.
-ASGI_APPLICATION = 'realtime.routing.application'
+ASGI_APPLICATION = 'configurations.routing.application'
 
 CHANNEL_LAYERS = {
     'default': {

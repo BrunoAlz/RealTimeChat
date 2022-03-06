@@ -7,3 +7,12 @@ def chat_index(request):
 
     }
     return render(request, template, context)
+
+
+def sala_chat(request):
+    template = 'chat/chat_index.html'
+    
+    context = {        
+
+    }
+    return render(request, template, context)
