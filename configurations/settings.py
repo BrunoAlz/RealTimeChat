@@ -146,6 +146,19 @@ MESSAGE_TAGS = {
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'accounts/login'
 
+
+# Configurações Especificas do Channels.
+ASGI_APPLICATION = 'realtime.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)]
+        },
+    },
+}
+
 # INTERNAL_IPS = ['127.0.0.1', ]
 
 # # Sessão em dias: 60s * 60m * 24h * 1d
