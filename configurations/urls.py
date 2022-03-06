@@ -7,6 +7,8 @@ from django.conf import settings
 urlpatterns = [
     # Toda vez que formos para a RAIZ do SITE Chamaremos o CORE.URLS
     path('', include('core.urls')), 
+    path('Tasks/', include('tasks.urls')), 
+    path('Chat/', include('chat.urls')), 
     path('accounts/', include('accounts.urls')), 
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

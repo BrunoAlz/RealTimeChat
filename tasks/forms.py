@@ -1,10 +1,10 @@
 from django import forms
 
 from utils.constants import COR_DO_TODO
-from .models import Todo
+from .models import Tasks
 
 
-class TodoForm(forms.ModelForm):    
+class TaskForm(forms.ModelForm):    
     titulo = forms.CharField(
         max_length=200,
         required=True,
@@ -35,5 +35,5 @@ class TodoForm(forms.ModelForm):
     )
 
     class Meta:
-        model = Todo
+        model = Tasks
         fields = ['titulo', 'conteudo', 'cor',]

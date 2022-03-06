@@ -24,7 +24,9 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 INSTALLED_APPS = [    
     'core',
     'accounts',
-
+    'tasks',
+    'chat',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
