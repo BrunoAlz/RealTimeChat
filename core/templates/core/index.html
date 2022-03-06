@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="col-xxl-12 col-lg-12 col-md-12"  hx-trigger="load">
+	<div class="card h-100">
+		<div class="card-header">
+			<h4 class="mb-0 fs-2">Lista de Tasks</h4>
+		</div>
+		<hr class="mt-0">
+
+	<div class="card-body p-0 scrollbar to-do-list-body-height" id="tasks">
+		{% include 'core/list_task.html' %}
+	</div>
+		<div class="card-footer bg-light p-0">
+			<a class="btn btn-sm btn-link d-block py-2" href="#!" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+			<span class="fas fa-plus me-1 fs--2"></span> Adicionar uma Nova TASK </a>
+		</div>
+		<div class="accordion" id="accordionExample">
+			<div class="accordion-item">
+			  	<div class="accordion-collapse collapse" id="collapse2" aria-labelledby="heading2" data-bs-parent="#accordionExample">
+					<div class="accordion-body">					
+						<form >
+							{% csrf_token %}
+							<div class="row">
+							<div class="col-sm-4">{{form.titulo}}</div>
+							<div class="col-sm-4">{{form.conteudo}}</div>
+							<div class="col-sm-4">{{form.cor}}</div>													
+							
+							<a 
+								type="submit" 
+								class="btn btn-falcon-primary mt-3 btn-block"
+								hx-post="{% url 'core:add_task' %}"
+								hx-target="#tasks"
+								>salvar
+							</a>			
+						</div>
+						</form>						
+					</div>
+			  	</div>
+			</div>		
+		</div>		
+	</div>
+</div>
+
+
+
+{% endblock content %}

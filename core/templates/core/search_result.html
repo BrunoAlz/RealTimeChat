@@ -1,0 +1,11 @@
+{% load static %}
+
+<div id="resultado">
+    {% for result in results %}
+        <div>
+            {{result.titulo}}
+        </div>
+    {% empty %}
+    Sem resulta
+    {% endfor %}
+</div>
